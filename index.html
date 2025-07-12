@@ -1,112 +1,131 @@
-<!DOCTYPE html><html lang="mr">
+<!DOCTYPE html>
+<html lang="mr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>पिक माहिती प्रणाली</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
-            color: #333;
-        }
-        header {
-            background: #34495e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 5px solid #2c3e50;
-        }
-        .selector-section {
-            margin: 20px auto;
-            text-align: center;
-        }
-        select {
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 8px;
-            border: 2px solid #34495e;
-            background: white;
-            cursor: pointer;
-        }
-        .info-box {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            max-width: 800px;
-            margin: 20px auto;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .info-box:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 30px rgba(0,0,0,0.3);
-        }
-        .info-box img {
-            max-width: 100%;
-            border-radius: 12px;
-            margin-bottom: 15px;
-        }
-        .info-item {
-            display: flex;
-            justify-content: space-between;
-            background: #f7f7f7;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 8px;
-        }
-        .varieties {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .variety-card {
-            flex: 1 1 45%;
-            background: #f7f7f7;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .variety-card img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 8px;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #34495e;
-            color: white;
-            margin-top: 20px;
-        }
-        a {
-            color: #fff;
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>पिक माहिती प्रणाली</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      color: #333;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    header {
+      background: #34495e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 5px solid #2c3e50;
+    }
+    header h1 {
+      margin-bottom: 5px;
+    }
+    .search-section {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-section input {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #34495e;
+      width: 250px;
+      max-width: 90%;
+      outline: none;
+    }
+    .info-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 20px auto;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+      animation: slideUp 0.5s ease-in-out;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .info-box img.main-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      background: #f7f7f7;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+    }
+    .variety-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .variety-card {
+      width: 160px;
+      background: #f0f8ff;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    }
+    .variety-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #34495e;
+      color: white;
+      margin-top: 30px;
+    }
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
 </head>
-<body><header>
-    <h1>🌾 पिक माहिती प्रणाली 🌾</h1>
-</header><main>
-    <section class="selector-section">
-        <select id="cropSelect" onchange="showCropInfo()">
-            <option value="">पिक निवडा</option>
-            <option value="सोयाबीन">सोयाबीन</option>
-            <option value="तूर">तूर</option>
-            <option value="कापूस">कापूस</option>
-            <option value="गहू">गहू</option>
-            <option value="भात">भात</option>
-        </select>
-    </section><section id="cropInfo" class="info-box"></section>
+<body>
 
-</main><footer>
-    शेतकऱ्यांसाठी महत्त्वाची माहिती मिळवण्यासाठी आमचे पेज पहा. अभिप्रायासाठी Instagram: <a href="https://instagram.com/bhagvat__45" target="_blank">@bhagvat__45</a>
-</footer><script>
-const crops = {
-    "सोयाबीन": {
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Soybean.USDA.jpg",
+  <header>
+    <h1>🌾 पिक माहिती प्रणाली 🌾</h1>
+    <p>शेतीसाठी आवश्यक माहिती एका ठिकाणी</p>
+  </header>
+
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="पिकाचे नाव शोधा..." oninput="filterCrop()" />
+  </section>
+
+  <section id="cropInfo" class="info-box"></section>
+
+  <footer>
+    शेतकऱ्यांसाठी महत्त्वाची माहिती मिळवण्यासाठी आमचे पेज पहा. अभिप्रायासाठी Instagram: 
+    <a href="https://instagram.com/bhagvat__45" target="_blank">@bhagvat__45</a>
+  </footer>
+
+  <script>
+    const crops = {
+      "सोयाबीन": {
+        image: "https://i.ibb.co/xS7LwdL/soybean.jpg",
         sowing: "जून ते जुलै",
         harvesting: "ऑक्टोबर ते नोव्हेंबर",
         fertilizer: "युरिया: २५ किलो/एकर, डीएपी: ५० किलो/एकर",
@@ -117,12 +136,12 @@ const crops = {
         watering: "8-10 दिवसांच्या अंतराने",
         extra: "तेल उत्पादनासाठी महत्त्वाचे पीक.",
         varieties: [
-            { name: "JS 335", img: "https://krishijagran.com/images/news/news_24151.jpg" },
-            { name: "MAUS 71", img: "https://www.researchgate.net/publication/309404687/figure/fig1/AS:669526612119552@1536623657052/Soybean-varieties-grown-in-Maharashtra.png" }
+          { name: "JS 335", img: "https://i.ibb.co/yfDsH9T/js335.jpg" },
+          { name: "MAUS 71", img: "https://i.ibb.co/Wfv6cL6/maus71.jpg" }
         ]
-    },
-    "तूर": {
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Pigeon_pea_(Cajanus_cajan)_02.jpg",
+      },
+      "तूर": {
+        image: "https://i.ibb.co/LvMS1bn/tur.jpg",
         sowing: "जून ते जुलै",
         harvesting: "नोव्हेंबर ते डिसेंबर",
         fertilizer: "युरिया: २० किलो/एकर, डीएपी: ४० किलो/एकर",
@@ -133,12 +152,12 @@ const crops = {
         watering: "१५ दिवसाच्या अंतराने",
         extra: "डाळ उत्पादनासाठी वापरले जाते.",
         varieties: [
-            { name: "BSMR 736", img: "https://www.icar-iipr.res.in/sites/default/files/styles/news_details/public/2021-11/Tur_BSMR-736.JPG" },
-            { name: "Asha", img: "https://www.icar-iipr.res.in/sites/default/files/2021-11/Tur_Asha.JPG" }
+          { name: "BSMR 736", img: "https://i.ibb.co/xg1YGC5/bsmr736.jpg" },
+          { name: "Asha", img: "https://i.ibb.co/VqJ04vB/asha.jpg" }
         ]
-    },
-    "कापूस": {
-        image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Cotton_bolls_on_cotton_plant.jpg",
+      },
+      "कापूस": {
+        image: "https://i.ibb.co/pLygtK9/cotton.jpg",
         sowing: "मे ते जून",
         harvesting: "नोव्हेंबर ते जानेवारी",
         fertilizer: "युरिया: ३० किलो/एकर, डीएपी: ६० किलो/एकर",
@@ -149,12 +168,12 @@ const crops = {
         watering: "१० दिवसांच्या अंतराने",
         extra: "कापूस वस्त्र उद्योगासाठी महत्त्वाचे आहे.",
         varieties: [
-            { name: "Bunny", img: "https://5.imimg.com/data5/ANDROID/Default/2020/12/IG/SI/XU/43175842/product-jpeg-500x500.jpg" },
-            { name: "RCH 659", img: "https://seed2plant.in/cdn/shop/products/Cotton-Bunny-Bt-seeds.jpg" }
+          { name: "Bunny", img: "https://i.ibb.co/Zm5vKJK/bunny.jpg" },
+          { name: "RCH 659", img: "https://i.ibb.co/5nzkdRc/rch659.jpg" }
         ]
-    },
-    "गहू": {
-        image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Wheat_close-up.jpeg",
+      },
+      "गहू": {
+        image: "https://images.pexels.com/photos/533982/pexels-photo-533982.jpeg",
         sowing: "ऑक्टोबर ते नोव्हेंबर",
         harvesting: "मार्च ते एप्रिल",
         fertilizer: "युरिया: ५० किलो/एकर, डीएपी: ८० किलो/एकर",
@@ -165,12 +184,12 @@ const crops = {
         watering: "१०-१२ दिवसांच्या अंतराने",
         extra: "मुख्य अन्नधान्य पीक.",
         varieties: [
-            { name: "Lok 1", img: "https://krishijagran.com/images/news/news_3667.jpg" },
-            { name: "HD 2967", img: "https://www.icar.org.in/sites/default/files/HD%202967%20wheat%20variety.jpg" }
+          { name: "Lok 1", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQicClxjVcgASkEsHZPupax97GJRgklkuLXGx1VPvND9jVH57pRXs_kjFc&s=10" },
+          { name: "HD 2967", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRDO9T9BF3loFpoPMqfMuTNbokdq_IcNNrwEP6Kk0v-RiBwNqU6jKJEME&s=10" }
         ]
-    },
-    "भात": {
-        image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Rice_paddy.JPG",
+      },
+      "भात": {
+        image: "https://i.ibb.co/F6cQchV/rice.jpg",
         sowing: "जून ते जुलै",
         harvesting: "नोव्हेंबर ते डिसेंबर",
         fertilizer: "युरिया: ४० किलो/एकर, डीएपी: ७० किलो/एकर",
@@ -181,41 +200,47 @@ const crops = {
         watering: "दररोज किंवा २ दिवसांनी",
         extra: "मुख्य अन्नधान्य पीक, भारतात जास्त लागवड.",
         varieties: [
-            { name: "MTU 1010", img: "https://krishijagran.com/images/news/news_11625.jpg" },
-            { name: "Swarna", img: "https://5.imimg.com/data5/SELLER/Default/2023/6/315596422/HT/LN/WJ/2972233/swarna-rice-500x500.jpg" }
+          { name: "MTU 1010", img: "https://i.ibb.co/zrffhz6/mtu1010.jpg" },
+          { name: "Swarna", img: "https://i.ibb.co/YZ5LRfM/swarna.jpg" }
         ]
-    }
-};
+      }
+    };
 
-function showCropInfo() {
-    const select = document.getElementById("cropSelect").value;
-    const infoDiv = document.getElementById("cropInfo");
+    function filterCrop() {
+      const query = document.getElementById("searchInput").value.trim();
+      const crop = crops[query];
 
-    if (crops[select]) {
-        const data = crops[select];
-        let varietyHTML = '<h3>उत्कृष्ट वाण:</h3><ul>';
-data.varieties.forEach(variety => {
-    varietyHTML += `<li>${variety.name}</li>`;
-});
-varietyHTML += '</ul>';
-
-        infoDiv.innerHTML = `
-            <img src="${data.image}" alt="${select}">
-            <h2>${select}</h2>
-            <div class="info-item"><span><strong>पेरणी कालावधी:</strong></span><span>${data.sowing}</span></div>
-            <div class="info-item"><span><strong>कापणी कालावधी:</strong></span><span>${data.harvesting}</span></div>
-            <div class="info-item"><span><strong>खत:</strong></span><span>${data.fertilizer}</span></div>
-            <div class="info-item"><span><strong>खत देण्याचा कालावधी:</strong></span><span>${data.fertilizerTime}</span></div>
-            <div class="info-item"><span><strong>फवारणी:</strong></span><span>${data.spray}</span></div>
-            <div class="info-item"><span><strong>फवारणी कालावधी:</strong></span><span>${data.sprayTime}</span></div>
-            <div class="info-item"><span><strong>माती प्रकार:</strong></span><span>${data.soil}</span></div>
-            <div class="info-item"><span><strong>पाण्याचा तक्ता:</strong></span><span>${data.watering}</span></div>
-            <div class="info-item"><span><strong>अधिक माहिती:</strong></span><span>${data.extra}</span></div>
-            ${varietyHTML}
-        `;
-    } else {
+      const infoDiv = document.getElementById("cropInfo");
+      if (!crop) {
         infoDiv.innerHTML = "";
+        return;
+      }
+
+      let varietyHTML = `<h3>📸 उत्कृष्ट वाण:</h3><div class="variety-gallery">`;
+      crop.varieties.forEach(variety => {
+        varietyHTML += `
+          <div class="variety-card">
+            <img src="${variety.img}" alt="${variety.name}">
+            <strong>${variety.name}</strong>
+          </div>`;
+      });
+      varietyHTML += `</div>`;
+
+      infoDiv.innerHTML = `
+        <img src="${crop.image}" alt="${query}" class="main-image">
+        <h2>${query}</h2>
+        <div class="info-item"><span><strong>पेरणी कालावधी:</strong></span><span>${crop.sowing}</span></div>
+        <div class="info-item"><span><strong>कापणी कालावधी:</strong></span><span>${crop.harvesting}</span></div>
+        <div class="info-item"><span><strong>खत:</strong></span><span>${crop.fertilizer}</span></div>
+        <div class="info-item"><span><strong>खत वेळ:</strong></span><span>${crop.fertilizerTime}</span></div>
+        <div class="info-item"><span><strong>फवारणी:</strong></span><span>${crop.spray}</span></div>
+        <div class="info-item"><span><strong>फवारणी वेळ:</strong></span><span>${crop.sprayTime}</span></div>
+        <div class="info-item"><span><strong>माती प्रकार:</strong></span><span>${crop.soil}</span></div>
+        <div class="info-item"><span><strong>पाणी नियोजन:</strong></span><span>${crop.watering}</span></div>
+        <div class="info-item"><span><strong>अधिक माहिती:</strong></span><span>${crop.extra}</span></div>
+        ${varietyHTML}`;
     }
-}
-</script></body>
+  </script>
+
+</body>
 </html>
