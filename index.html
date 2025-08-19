@@ -1,246 +1,106 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>पिक माहिती प्रणाली</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #74ebd5, #ACB6E5);
-      color: #333;
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    header {
-      background: #34495e;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 5px solid #2c3e50;
-    }
-    header h1 {
-      margin-bottom: 5px;
-    }
-    .search-section {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-section input {
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: 2px solid #34495e;
-      width: 250px;
-      max-width: 90%;
-      outline: none;
-    }
-    .info-box {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 800px;
-      margin: 20px auto;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.2);
-      animation: slideUp 0.5s ease-in-out;
-    }
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .info-box img.main-image {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .info-item {
-      display: flex;
-      justify-content: space-between;
-      background: #f7f7f7;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
-    }
-    .variety-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .variety-card {
-      width: 160px;
-      background: #f0f8ff;
-      padding: 10px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    }
-    .variety-card img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #34495e;
-      color: white;
-      margin-top: 30px;
-    }
-    a {
-      color: #fff;
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganpati Mandal 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-yellow-50 font-sans">
 
-  <header>
-    <h1>🌾 पिक माहिती प्रणाली 🌾</h1>
-    <p>शेतीसाठी आवश्यक माहिती एका ठिकाणी</p>
+  <!-- Header -->
+  <header class="bg-orange-600 text-white py-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-2xl font-bold">Shree Ganesh Mandal 2025</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="#home" class="hover:underline">Home</a></li>
+          <li><a href="#events" class="hover:underline">Events</a></li>
+          <li><a href="#gallery" class="hover:underline">Gallery</a></li>
+          <li><a href="#live" class="hover:underline">Live Darshan</a></li>
+          <li><a href="#donate" class="hover:underline">Donate</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="search-section">
-    <input type="text" id="searchInput" placeholder="पिकाचे नाव शोधा..." oninput="filterCrop()" />
+  <!-- Hero -->
+  <section id="home" class="relative bg-cover bg-center h-[80vh]" style="background-image: url('ganpati-bg.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <h2 class="text-4xl md:text-6xl text-white font-bold text-center">🌸 Ganpati Bappa Morya 🌸<br>Welcome to Mandal 2025</h2>
+    </div>
   </section>
 
-  <section id="cropInfo" class="info-box"></section>
+  <!-- Events -->
+  <section id="events" class="py-12 container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-orange-600 mb-6">Events & Schedule</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white shadow rounded-xl">
+        <h3 class="text-xl font-semibold">Day 1 - Aagman Sohala</h3>
+        <p>Ganesh Murti Sthapana, Pooja & Aarti</p>
+      </div>
+      <div class="p-6 bg-white shadow rounded-xl">
+        <h3 class="text-xl font-semibold">Day 3 - Bhajan Sandhya</h3>
+        <p>Devotional songs and cultural program.</p>
+      </div>
+      <div class="p-6 bg-white shadow rounded-xl">
+        <h3 class="text-xl font-semibold">Day 10 - Visarjan</h3>
+        <p>Ganpati Visarjan with Dhol-Tasha procession.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    शेतकऱ्यांसाठी महत्त्वाची माहिती मिळवण्यासाठी आमचे पेज पहा. अभिप्रायासाठी Instagram: 
-    <a href="https://www.instagram.com/bhagvat___45?igsh=MWY0NjlpNDltYjNkNw==" target="_blank">@bhagvat__45</a>
+  <!-- Gallery -->
+  <section id="gallery" class="py-12 bg-orange-50">
+    <h2 class="text-3xl font-bold text-center text-orange-600 mb-6">Photo Gallery</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+      <img src="pavan.jpeg" class="rounded-lg shadow">
+      <img src="subh.jpeg" class="rounded-lg shadow">
+      <img src="abhi.jpeg" class="rounded-lg shadow">
+      <img src="hari.jpeg" class="rounded-lg shadow">
+    </div>
+  </section>
+
+  <!-- Live Darshan -->
+  <section id="live" class="py-12 container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-orange-600 mb-6">Live Darshan</h2>
+    <div class="flex justify-center">
+      <iframe width="560" height="315" class="rounded-xl shadow"
+        src="plive.mp4" 
+        frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Donate -->
+  <section id="donate" class="py-12 bg-orange-100 text-center">
+    <h2 class="text-3xl font-bold text-orange-600 mb-4">Support Our Mandal</h2>
+    <p class="mb-4">Scan QR or use UPI ID: <b>7499409003@ybl</b></p>
+    <img src="QR.jpeg" alt="Donation QR" class="mx-auto w-48 shadow-lg rounded-lg">
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-12 container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-orange-600 mb-6">Contact Us</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-xl font-semibold mb-2">📍 Address</h3>
+        <p>Chattpati Shivaji Maharaj Ganesh Mandal,Main Chowk, Nagapur, 444303, Maharashtra</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">📞 Phone</h3>
+        <p>+91 74994 09003</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">📧 Email</h3>
+        <p>ganpatimandal2025@gmail.com</p>
+      </div>
+      <iframe class="w-full h-64 rounded-xl shadow"
+        src="https://www.google.com/maps/embed?pb=!1m18..."
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-orange-600 text-white py-4 text-center">
+    <p>&copy; 2025 Shree Ganesh Mandal. All Rights Reserved. | Ganpati Bappa Morya 🙏</p>
   </footer>
-
-  <script>
-    const crops = {
-      "Soyabean": {
-        image: "https://assets.tractorjunction.com/tractor-junction/assets/images/crop-categories/soybean-174530430271.webp",
-        sowing: "जून ते जुलै",
-        harvesting: "ऑक्टोबर ते नोव्हेंबर",
-        fertilizer: "युरिया: २५ किलो/एकर, डीएपी: ५० किलो/एकर",
-        fertilizerTime: "पेरणीच्या २५-३० दिवसानंतर",
-        spray: "इमामेक्टिन, थायोमेथोक्सम",
-        sprayTime: "पेरणीच्या ३०-४५ दिवसानंतर",
-        soil: "काळी माती, हलकी व लाल माती",
-        watering: "8-10 दिवसांच्या अंतराने",
-        extra: "तेल उत्पादनासाठी महत्त्वाचे पीक.",
-        varieties: [
-          { name: "JS 335", img: "https://static.agrostar.in/static/AGS-S-4707_1.jpg" },
-          { name: "MAUS 71", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFwHZVPcgq9FzfuJS7iTMajrc5KsPkvfvXQ9WtgggbYsxi7GXa7qG4XsMD&s=10" }
-        ]
-      },
-      "Toor": {
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNtitFDnftRny8HrGChnY7IlG02Jh3PpCrBq0cGMBDRN9JUTqW0imKSD8&s=10",
-        sowing: "जून ते जुलै",
-        harvesting: "नोव्हेंबर ते डिसेंबर",
-        fertilizer: "युरिया: २० किलो/एकर, डीएपी: ४० किलो/एकर",
-        fertilizerTime: "पेरणीच्या २०-२५ दिवसानंतर",
-        spray: "स्पिनोसॅड, इमिडाक्लोप्रिड",
-        sprayTime: "फुलोऱ्याच्या टप्प्यावर",
-        soil: "काळी व मध्यम लाल माती",
-        watering: "१५ दिवसाच्या अंतराने",
-        extra: "डाळ उत्पादनासाठी वापरले जाते.",
-        varieties: [
-          { name: "BSMR 736", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS13lR-kEnzS3TyhUKGcExtYyeUfvCwM02slshXGH-KAj2mybiQKMfj5ns0&s=10" },
-          { name: "Asha", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIiuSMA60Wk5rIHjVlEc5GMm-daonfwE-fkP7gfz4bnJaeh3pjAu2aZDU4&s=10" }
-        ]
-      },
-      "Kapus": {
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdlophHxjwsy6VZz9zrVfXvQm8SEy3KShvpL5gI7vHwj0rl9leQicDktHi&s=10",
-        sowing: "मे ते जून",
-        harvesting: "नोव्हेंबर ते जानेवारी",
-        fertilizer: "युरिया: ३० किलो/एकर, डीएपी: ६० किलो/एकर",
-        fertilizerTime: "पेरणीच्या ३० व ६० दिवसानंतर",
-        spray: "इमामेक्टिन, क्विनालफॉस",
-        sprayTime: "रोग किंवा कीटक दिसल्यावर",
-        soil: "काळी खोल माती",
-        watering: "१० दिवसांच्या अंतराने",
-        extra: "कापूस वस्त्र उद्योगासाठी महत्त्वाचे आहे.",
-        varieties: [
-          { name: "Bunny", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ441_nQukoI7NLjQhehPKT_OCWgoCn6vpkhcJY70PRJ84hT-yfpokJFrj&s=10" },
-          { name: "RCH 659", img: "https://5.imimg.com/data5/SELLER/Default/2025/4/502162681/ZT/NG/LH/104975250/rashi-seeds-rch-659.jpg" }
-        ]
-      },
-      "Gahu": {
-        image: "https://images.pexels.com/photos/533982/pexels-photo-533982.jpeg",
-        sowing: "ऑक्टोबर ते नोव्हेंबर",
-        harvesting: "मार्च ते एप्रिल",
-        fertilizer: "युरिया: ५० किलो/एकर, डीएपी: ८० किलो/एकर",
-        fertilizerTime: "पेरणीच्या २५ दिवसानंतर",
-        spray: "मॅन्कोझेब, कार्बेन्डाझीम",
-        sprayTime: "पाने पिवळी पडल्यावर",
-        soil: "काळी व गडद लाल माती",
-        watering: "१०-१२ दिवसांच्या अंतराने",
-        extra: "मुख्य अन्नधान्य पीक.",
-        varieties: [
-          { name: "Lok 1", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQicClxjVcgASkEsHZPupax97GJRgklkuLXGx1VPvND9jVH57pRXs_kjFc&s=10" },
-          { name: "HD 2967", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRDO9T9BF3loFpoPMqfMuTNbokdq_IcNNrwEP6Kk0v-RiBwNqU6jKJEME&s=10" }
-        ]
-      },
-      "Bhat": {
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcNttLwbUCaHqdWp-wGlCodkvne23uVEFY6m3jrGdw_dcQNeXP6KFSpmR5&s=10",
-        sowing: "जून ते जुलै",
-        harvesting: "नोव्हेंबर ते डिसेंबर",
-        fertilizer: "युरिया: ४० किलो/एकर, डीएपी: ७० किलो/एकर",
-        fertilizerTime: "पेरणीच्या २० दिवसानंतर",
-        spray: "बुप्रोफेझिन, क्लोरोपायरीफॉस",
-        sprayTime: "कीटक दिसल्यावर",
-        soil: "तांबडी व चिकण माती",
-        watering: "दररोज किंवा २ दिवसांनी",
-        extra: "मुख्य अन्नधान्य पीक, भारतात जास्त लागवड.",
-        varieties: [
-          { name: "MTU 1010", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkJr7zItGDUkKJ3XcHqlsid44LZfb791zavFVVYx-jfQO-Pif_7TjmJdbf&s=10" },
-          { name: "Swarna", img: "https://krishirasayan.com/storage/product/1705402843-SWARNA-SUB-1-copy.png" }
-        ]
-      }
-    };
-
-    function filterCrop() {
-      const query = document.getElementById("searchInput").value.trim();
-      const crop = crops[query];
-
-      const infoDiv = document.getElementById("cropInfo");
-      if (!crop) {
-        infoDiv.innerHTML = "";
-        return;
-      }
-
-      let varietyHTML = `<h3>📸 उत्कृष्ट वाण:</h3><div class="variety-gallery">`;
-      crop.varieties.forEach(variety => {
-        varietyHTML += `
-          <div class="variety-card">
-            <img src="${variety.img}" alt="${variety.name}">
-            <strong>${variety.name}</strong>
-          </div>`;
-      });
-      varietyHTML += `</div>`;
-
-      infoDiv.innerHTML = `
-        <img src="${crop.image}" alt="${query}" class="main-image">
-        <h2>${query}</h2>
-        <div class="info-item"><span><strong>पेरणी कालावधी:</strong></span><span>${crop.sowing}</span></div>
-        <div class="info-item"><span><strong>कापणी कालावधी:</strong></span><span>${crop.harvesting}</span></div>
-        <div class="info-item"><span><strong>खत:</strong></span><span>${crop.fertilizer}</span></div>
-        <div class="info-item"><span><strong>खत वेळ:</strong></span><span>${crop.fertilizerTime}</span></div>
-        <div class="info-item"><span><strong>फवारणी:</strong></span><span>${crop.spray}</span></div>
-        <div class="info-item"><span><strong>फवारणी वेळ:</strong></span><span>${crop.sprayTime}</span></div>
-        <div class="info-item"><span><strong>माती प्रकार:</strong></span><span>${crop.soil}</span></div>
-        <div class="info-item"><span><strong>पाणी नियोजन:</strong></span><span>${crop.watering}</span></div>
-        <div class="info-item"><span><strong>अधिक माहिती:</strong></span><span>${crop.extra}</span></div>
-        ${varietyHTML}`;
-    }
-  </script>
 
 </body>
 </html>
